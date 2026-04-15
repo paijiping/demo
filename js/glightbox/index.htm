@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>glightbox-3.3.0</title>
+    <link rel="stylesheet" href="../demo/css/glightbox.min.css">
+    
+    <script src="../demo/js/glightbox.min.js"></script>
+    <script>
+      document.addEventListener('DOMContentLoaded', () => {
+          const lightbox = GLightbox({ 
+              touchNavigation: true,
+              loop: true,
+              autoplayVideos: true,
+          });
+      });
+ </script>
+
+</head>
+<body>
+    <a href="christmas.jpg" class="glightbox" data-title="My title">
+        <img src="christmas.jpg" alt="image" />
+      </a>
+      
+</body>
+</html>
