@@ -153,20 +153,17 @@
             </div>
         </main>
     </div>
-<script src="https://cdn.jsdelivr.net/npm/gsap@3.15/dist/gsap.min.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/gsap@3.15/dist/ScrollTrigger.min.js"></script>
-<!-- ScrollSmoother requires ScrollTrigger -->
-<script src="https://cdn.jsdelivr.net/npm/gsap@3.15/dist/ScrollSmoother.min.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/gsap@3.15/dist/SplitText.min.js"></script>
+<script src="js/gsap/gsap.min.js"></script>
+<script src="js/gsap/ScrollTrigger.min.js"></script>
+<script src="js/gsap/ScrollSmoother.min.js"></script>
+<!-- ✅ 改用這個，官方免費版 -->
+<script src="js/gsap/SplitText.min.js"></script>
     <script>
-        // use a script tag or an external JS file
-        document.addEventListener("DOMContentLoaded", (event) => {
-            gsap.registerPlugin(ScrollTrigger, ScrollSmoother, SplitText)
-            // gsap code here!
-        });
+        gsap.registerPlugin(SplitText);
 
         // split elements with the class "split" into words and characters
         let split = SplitText.create(".split", { type: "words, chars" });
+
         // now animate the characters in a staggered fashion
         gsap.from(split.chars, {
             x: 150,
@@ -176,7 +173,8 @@
             stagger: 0.04
         });
 
-        ///輪播------------------------------------------------------------------------------
+        ///輪播-------------------------------------------------------------------------------
+        gsap.registerPlugin(ScrollTrigger, ScrollSmoother);
 const smoother = ScrollSmoother.create({
     wrapper: "#smooth-wrapper",
     content: "#smooth-content",
