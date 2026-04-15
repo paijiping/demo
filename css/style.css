@@ -335,3 +335,38 @@
     align-items: center;
     justify-content: center;
   }
+
+
+/* 佔位方塊 — 尺寸跟你的圖片一致 */
+.img-skeleton {
+  width: 100%;
+  aspect-ratio: 360 / 600; /* 改成你圖片的比例 */
+  background: #e8e8e8;
+  border-radius: 4px;
+  animation: shimmer 1.4s ease-in-out infinite;
+}
+
+@keyframes shimmer {
+  0%, 100% { opacity: 0.5; }
+  50%       { opacity: 1;   }
+}
+
+/* 圖片預設隱藏，載入完才淡入 */
+.lazy-img {
+  display: block;
+  width: 100%;
+  opacity: 0;
+  transition: opacity 0.4s ease;
+  position: absolute;
+  top: 0; left: 0;
+}
+
+.lazy-img.loaded {
+  opacity: 1;
+}
+
+/* 父層要 relative，讓圖片疊在 skeleton 上 */
+.project-wrap a {
+  display: block;
+  position: relative;
+}
