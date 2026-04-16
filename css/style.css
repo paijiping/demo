@@ -403,3 +403,22 @@
      }
 
 }
+
+@media (max-width: 375px){
+    h1 {
+        font-size: 3rem;
+        margin-right: 0;
+    }
+    nav{
+      margin-top: 1rem;
+    }
+    .project-wrap{
+      width: 50vw;
+    }
+
+   .horiz-gallery-strip, .horiz-gallery-wrapper{
+    margin-top: 140px;
+   }
+
+
+}
